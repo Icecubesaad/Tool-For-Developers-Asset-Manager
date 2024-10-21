@@ -214,10 +214,13 @@ if __name__ == "__main__":
     CURRENT_DIR = get_project_directory()
     print("Choose a framework you are working on right now\n")
     print(
-        "press 1 for React.js\npress 2 for Next.js\npress 3 for Angular.js\npress 4 for Django\npress 5 for Laravel\npress 6 for Wordpress\npress 7 for exit"
+        "press 1 for React.js\npress 2 for Next.js\npress 3 for Angular.js\npress 4 for Django\npress 5 for Laravel\npress 6 for exit"
     )
     user_choice_raw = input("Enter your choice: ")
     user_choice = int(user_choice_raw)
+    if user_choice == 6:
+        print("Terminating the process")
+        exit()
     set_path_for_framework(user_choice)
     # Observe the source directory for new files being added
     event_handler = MoverHandler()
